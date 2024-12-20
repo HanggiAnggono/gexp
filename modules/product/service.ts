@@ -47,7 +47,7 @@ const products: Product[] = [
     slug: 'distressed-denim-jeans',
     name: 'Distressed Denim Jeans',
     imageUrl:
-      'https://tse3.mm.bing.net/th?id=OIP.G22r1iYQiSCIEhtyrR7VLQHaLH&w=200&h=300&c=7',
+      'https://i5.walmartimages.com/seo/Wassery-Men-s-Straight-Leg-Jeans-Stacked-Denim-Jeans-Ripped-Distressed-Destroyed-Biker-Jean-Washed-Denim-Pants-Streetwear-Clothes_6de80804-deac-4e44-aefc-ea9afda7e64a.9c5a670bddf8b01a6387dbf80feacaa1.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF',
     price: 49.99,
     description: `
       Fashionable distressed denim jeans with ripped knees and frayed hem.
@@ -118,7 +118,7 @@ const products: Product[] = [
     slug: 'skinny-jeans',
     name: 'Skinny Jeans',
     imageUrl:
-      'https://tse1.mm.bing.net/th?id=OIP.0uI6tSeuRyKWO063rfLu6gHaLI&w=200&h=300&c=7',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs5_RohVStNsX0xUJovLtvoqEw2rAWnjwZ4w&s',
     price: 39.99,
     description: `
       Fashionable skinny jeans with a stretchy fit. Made from 100% cotton denim.

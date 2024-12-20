@@ -55,7 +55,7 @@ export function Footer() {
               height={120}
               className="rounded-full mb-4 mx-auto"
             />
-            <p className="text-center text-xs text-black">
+            <p className="text-center text-xs text-foreground">
               &copy; 2024 Gold & Exp. All rights reserved.
             </p>
           </div>
