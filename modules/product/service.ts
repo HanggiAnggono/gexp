@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   id: number
   slug: string
   name: string
@@ -23,10 +23,6 @@ const products: Product[] = [
       whether you are running errands, playing with the kids, or just lounging around the house.
       The relaxed fit makes it easy to move around in, and the graphic print is a great way to add
       some visual interest to your outfit.
-      <br />
-      <br />
-      ⭐⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">Watch the video to see how it looks in action</a>
     `,
   },
@@ -43,10 +39,6 @@ const products: Product[] = [
       and has a scratch-resistant glass face. The minimalist design makes it easy to pair
       with any outfit, and the simple face is easy to read. The watch is also very comfortable
       to wear, with a soft leather strap that is easy to adjust to your wrist size.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.instagram.com/p/CWfjKqVj5hH/" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">See how it looks on Instagram</a>
     `,
   },
@@ -65,10 +57,6 @@ const products: Product[] = [
       to wear, and the classic five-pocket design makes them easy to wear
       with any outfit. The distressed look is sure to turn heads, and the jeans
       are a great way to add some visual interest to your outfit.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.pexels.com/search/jeans/" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">See how it looks in photos</a>
     `,
   },
@@ -86,10 +74,6 @@ const products: Product[] = [
       The belt is a great way to add some finishing touches to your outfit,
       and the high-quality leather ensures that it will last for years
       to come.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.leatherworking.org/leather-belt/" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">Learn more about leather belts</a>
     `,
   },
@@ -108,10 +92,6 @@ const products: Product[] = [
       with any outfit. The sweater is a great way to add some warmth and
       style to your outfit, and the high-quality merino wool ensures
       that it will last for years to come.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.merino.com/why-merino/temperature-regulation/" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">Learn more about merino wool</a>
     `,
   },
@@ -130,10 +110,6 @@ const products: Product[] = [
       and the classic design makes it easy to pair with any outfit. The shirt
       is a great way to add some sophistication to your outfit, and the high-quality
       cotton ensures that it will last for years to come.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.gq.com/story/how-to-tie-a-tie" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">Learn how to tie a tie</a>
     `,
   },
@@ -152,10 +128,6 @@ const products: Product[] = [
       them easy to wear with any outfit. The skinny jeans are a great way to add
       some style to your outfit, and the high-quality denim ensures that they will
       last for years to come.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.pexels.com/search/jeans/" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">See how it looks in photos</a>
     `,
   },
@@ -174,10 +146,6 @@ const products: Product[] = [
       and the classic design makes it easy to pair with any outfit. The blazer
       is a great way to add some sophistication to your outfit, and the high-quality
       wool ensures that it will last for years to come.
-      <br />
-      <br />
-      ⭐️⭐️⭐️⭐️⭐️
-      <br />
       <a href="https://www.gq.com/story/how-to-tie-a-tie" class="mt-10 text-primary underline" target="_blank" rel="noopener noreferrer">Learn how to tie a tie</a>
     `,
   },

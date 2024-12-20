@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,15 +11,21 @@ interface Props {
     imageUrl: string
     price: number
   }[]
+  className?: string
 }
 
-export function ProductsCard({ products = [] }: Props) {
+export function ProductsCard({ products = [], className }: Props) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div
+      className={cn(
+        'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4',
+        className
+      )}
+    >
       {products.map((product) => {
         return (
           <Link key={product.id} href={`/product/${product.slug}`}>
-            <Card className="w-full">
+            <Card className="w-full hover:shadow-lg hover:scale-[1.01]">
               <CardContent className="p-0 rounded-xl overflow-hidden">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
