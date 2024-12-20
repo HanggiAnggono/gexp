@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Footer } from '@/components/ui/footer'
+import { ThemeProvider } from 'next-themes'
+import { ThemeSwitcher } from '@/components/ui/theme-switcher'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,15 +31,17 @@ export default function AppLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col w-full min-h-screen">
-          <TopBar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <div className="flex flex-col w-full min-h-screen">
+            <TopBar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
@@ -70,6 +74,7 @@ function TopBar() {
             <ShoppingCartIcon className="mr-0.5" />
           </Button>
         </Link>
+        <ThemeSwitcher />
       </div>
     </div>
   )
