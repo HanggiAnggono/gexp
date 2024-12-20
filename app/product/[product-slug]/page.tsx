@@ -10,6 +10,7 @@ import { QuantityInput } from '@/components/ui/quantity-input'
 import { ProductReviews } from './product-reviews'
 import { ProductsCard } from '../products-card'
 import { ProductVariantGrid } from './product-variant-grid'
+import { ProductBreadcrumb } from './product-breadcrumb'
 
 export default async function ProductPage({
   params,
@@ -25,7 +26,11 @@ export default async function ProductPage({
   ).filter((p) => p.id !== product.id)
 
   return (
-    <div className="py-12">
+    <div>
+      <ProductBreadcrumb
+        containerClassName="mb-4"
+        items={[{ name: product.name, href: `/product/${product.slug}` }]}
+      />
       <div className="flex flex-col md:flex-row gap-4">
         <div className="tablet:w-2/3">
           <div className="flex flex-col desktop:flex-row">
@@ -51,16 +56,18 @@ export default async function ProductPage({
         </div>
 
         {/* Cart */}
-        <div className="tablet:w-1/3 px-4">
+        <div className="w-full px-4 fixed bottom-0 z-50 bg-background tablet:static tablet:bottom-[unset] tablet:z-[unset] tablet:bg-none tablet:w-1/3 tablet:top-42 tablet:shadow-none">
           {/* Price */}
-          <div className="flex flex-col items-end tablet:block static md:fixed top-42">
-            <h2 className="text-xl mb-4">Price</h2>
+          <div className="flex flex-col items-end md:items-start static md:fixed py-4">
+            <h2 className="hidden md:block text-xl mb-4">Price</h2>
             <div className="text-4xl">${product.price}</div>
-            <QuantityInput className="mt-4" />
-            <Button className="mt-4 p-6 text-xl w-full">
-              <ShoppingCartIcon className="mb-1 !size-5" />
-              Add to cart
-            </Button>
+            <div className="flex flex-row md:flex-col items-center justify-between gap-4 ">
+              <QuantityInput className="mt-4" />
+              <Button className="mt-4 p-6 text-xl w-full">
+                <ShoppingCartIcon className="mb-1 !size-5" />
+                Add to cart
+              </Button>
+            </div>
           </div>
         </div>
       </div>

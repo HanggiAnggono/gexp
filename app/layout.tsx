@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col w-full items-center min-h-screen">
           <TopBar />
-          <div className="container pt-10 min-h-screen">{children}</div>
+          <div className="container py-4 min-h-screen">{children}</div>
           <Footer />
         </div>
       </body>
