@@ -1,6 +1,6 @@
 import { getProductBySlug, getProductVariants } from '@/modules/product/service'
 import { ProductImageCollection } from './product-image-collection'
-import Image from "next/image"
+import Image from 'next/image'
 
 export default async function ProductPage({
   params,
@@ -14,14 +14,24 @@ export default async function ProductPage({
   return (
     <div className="pt-24">
       <div className="flex">
-        <ProductImageCollection />
+        <ProductImageCollection
+          images={[
+            product.imageUrl,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+            `https://picsum.photos/140/140?random=${Math.random()}`,
+          ]}
+        />
         <div className="ml-10">
           <h1 className="text-3xl mb-10">{product.name}</h1>
           <h2 className="text-xl mb-4">Variants</h2>
           <div className="grid grid-cols-3 gap-4">
             {variants.map((variant) => (
               <div key={variant.id}>
-                <label>
+                <label className="cursor-pointer">
                   <input
                     type="radio"
                     name="variant"
@@ -57,7 +67,7 @@ export default async function ProductPage({
       {/* Description */}
       <div className="mt-10">
         <h2 className="text-xl mb-4">Description</h2>
-        <p>{product.description}</p>
+        <div dangerouslySetInnerHTML={{ __html: product.description }} />
       </div>
     </div>
   )

@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Input } from '@/components/ui/input'
+import { HomeIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,8 +44,16 @@ export default function RootLayout({
 
 function SearchBar() {
   return (
-    <div className="flex justify-center px-4 pt-10">
-      <Input placeholder="Search products" className="w-3/4 h-12" />
+    <div className="flex items-center justify-center px-4 pt-10 gap-4">
+      <Link href="/">
+        <Button className="rounded-full p-0 h-11 w-11">
+          <HomeIcon />
+        </Button>
+      </Link>
+      <Input
+        placeholder="Search products"
+        className="w-3/4 h-12 rounded-full"
+      />
     </div>
   )
 }
