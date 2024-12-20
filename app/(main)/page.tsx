@@ -3,8 +3,13 @@ import { getProducts } from '@/modules/product/service'
 import { CatalogueList } from '../catalogue-list'
 import { getCategories } from '@/modules/category/service'
 
-export default async function Home() {
-  const products = await getProducts()
+export default async function Home({
+  searchParams,
+}: Readonly<{
+  searchParams: { [key: string]: string | string[] | undefined }
+}>) {
+  const search = (await searchParams).search
+  const products = await getProducts({ name: search?.toString() })
   const categories = await getCategories()
 
   return (

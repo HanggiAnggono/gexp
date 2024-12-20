@@ -160,9 +160,15 @@ const products: Product[] = [
   },
 ]
 
-export async function getProducts(): Promise<Product[]> {
+export async function getProducts({
+  name = '',
+}: { name?: string } = {}): Promise<Product[]> {
   return new Promise((resolve) => {
-    resolve(products)
+    resolve(
+      products.filter((product) =>
+        product.name?.toLowerCase().includes(name.toLowerCase())
+      )
+    )
   })
 }
 

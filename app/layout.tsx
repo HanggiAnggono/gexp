@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { Footer } from '@/components/ui/footer'
 import { ThemeProvider } from 'next-themes'
 import { ThemeSwitcher } from '@/components/ui/theme-switcher'
+import { TopBar } from '@/components/ui/top-bar'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -47,35 +48,3 @@ export default function AppLayout({
   )
 }
 
-function TopBar() {
-  return (
-    <div className="flex items-center w-full sticky top-0 z-50 bg-background p-4 gap-4 shadow-md">
-      <Link href="/" className="hidden tablet:block">
-        <Image
-          src="/images/ger.png"
-          alt="Logo"
-          width={70}
-          height={70}
-          className="rounded-full bg-primary"
-        />
-      </Link>
-      <div className="flex flex-grow items-center justify-center gap-4">
-        <Link href="/">
-          <Button className="rounded-full p-0 h-11 w-11">
-            <HomeIcon />
-          </Button>
-        </Link>
-        <Input
-          placeholder="Search products"
-          className="w-3/4 h-12 rounded-full"
-        />
-        <Link href="/cart">
-          <Button className="rounded-full p-0 h-11 w-11">
-            <ShoppingCartIcon className="mr-0.5" />
-          </Button>
-        </Link>
-        <ThemeSwitcher />
-      </div>
-    </div>
-  )
-}
