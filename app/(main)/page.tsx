@@ -1,6 +1,6 @@
 import { ProductsCard } from './product/products-card'
 import { getProducts } from '@/modules/product/service'
-import { CatalogueList } from './catalogue-list'
+import { CatalogueList } from '../catalogue-list'
 import { getCategories } from '@/modules/category/service'
 
 export default async function Home() {

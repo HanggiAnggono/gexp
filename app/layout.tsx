@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Gold Experience Requiem',
 }
 
-export default function RootLayout({
+export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -33,9 +33,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col w-full items-center min-h-screen">
+        <div className="flex flex-col w-full min-h-screen">
           <TopBar />
-          <div className="container py-4 min-h-screen">{children}</div>
+          {children}
           <Footer />
         </div>
       </body>

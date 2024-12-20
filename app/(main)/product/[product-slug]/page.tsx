@@ -26,7 +26,7 @@ export default async function ProductPage({
   ).filter((p) => p.id !== product.id)
 
   return (
-    <div>
+    <div className="container">
       <ProductBreadcrumb
         containerClassName="mb-4"
         items={[{ name: product.name, href: `/product/${product.slug}` }]}
