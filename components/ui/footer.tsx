@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="w-full flex justify-center p-20 border-t-4 border-primary">
       <div className="container">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row gap-4">
           <div>
             <h3 className="text-2xl font-bold mb-4">Gold & Exp</h3>
             <ul>

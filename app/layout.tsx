@@ -45,8 +45,8 @@ export default function RootLayout({
 
 function TopBar() {
   return (
-    <div className="flex items-center w-full fixed z-50 bg-background p-4 gap-4">
-      <Link href="/">
+    <div className="flex items-center w-full sticky top-0 z-50 bg-background p-4 gap-4 shadow-md">
+      <Link href="/" className="hidden tablet:block">
         <Image
           src="/images/ger.png"
           alt="Logo"

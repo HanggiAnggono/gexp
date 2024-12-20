@@ -1,13 +1,12 @@
 'use client'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 
 interface Props {
   images: string[]
 }
-
-const VISIBLE_IMAGE_COUNT = 4
 
 export function ProductImageCollection({ images = [] }: Props) {
   const [activeImage, setActiveImage] = useState(0)
@@ -30,7 +29,7 @@ export function ProductImageCollection({ images = [] }: Props) {
 
   return (
     <div>
-      <div className="relative rounded-md overflow-hidden h-[30rem] w-[30rem] bg-primary">
+      <div className="relative rounded-md overflow-hidden w-auto h-[30rem] bg-primary">
         <Image
           src={images[activeImage]}
           alt="Product"
@@ -40,37 +39,39 @@ export function ProductImageCollection({ images = [] }: Props) {
       </div>
 
       <div
-        className="w-[30rem] overflow-x-auto"
+        className="w-auto overflow-x-auto p-2"
         ref={sliderRef}
         style={{ scrollbarWidth: 'none' }}
       >
         <div className="slider-parent flex gap-4 pt-4">
-          {images.map((image, i) => (
-            <div
-              key={`image_${i}`}
-              className="flex-shrink-0 relative rounded-md overflow-hidden h-[7rem] w-[7rem] bg-primary"
-              id={`pdp-image-${i}`}
-              ref={(ref) => {
-                imagesRef.current[i] = ref!
-              }}
-            >
-              <Button
-                onClick={() => setActiveImage(i)}
-                className={activeImage === i ? 'border-4 border-primary' : ''}
+          {images.map((image, i) => {
+            return (
+              <div
+                key={`image_${i}`}
+                className={cn(
+                  activeImage === i ? 'outline outline-4 outline-primary' : '',
+                  'flex-shrink-0 relative rounded-md overflow-hidden h-[7rem] w-[7rem] bg-primary'
+                )}
+                id={`pdp-image-${i}`}
+                ref={(ref) => {
+                  imagesRef.current[i] = ref!
+                }}
               >
-                <Image
-                  src={image}
-                  alt="Product"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </Button>
-            </div>
-          ))}
+                <Button onClick={() => setActiveImage(i)}>
+                  <Image
+                    src={image}
+                    alt="Product"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </Button>
+              </div>
+            )
+          })}
         </div>
       </div>
 
-      <div className="flex gap-2 pt-4 justify-end">
+      <div className="flex gap-2 p-4 md:pr-0 justify-end">
         <Button onClick={scrollLeft}>Prev</Button>
         <Button onClick={scrollRight}>Next</Button>
       </div>
