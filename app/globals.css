@@ -85,4 +85,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  a:hover {
+    @apply text-primary;
+  }
 }

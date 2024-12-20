@@ -6,6 +6,7 @@ import { HomeIcon, ShoppingCartIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Footer } from '@/components/ui/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,7 +35,8 @@ export default function RootLayout({
       >
         <div className="flex flex-col w-full items-center min-h-screen">
           <TopBar />
-          <div className="container pt-10">{children}</div>
+          <div className="container pt-10 min-h-screen">{children}</div>
+          <Footer />
         </div>
       </body>
     </html>
