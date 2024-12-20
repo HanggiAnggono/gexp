@@ -1,10 +1,17 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import { Category } from '@/modules/category/service'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function CatalogueList({ categories }: { categories: Category[] }) {
+export function CatalogueList({
+  categories,
+  active,
+}: {
+  categories: Category[]
+  active?: string
+}) {
   return (
     <div>
       <div className="hidden tablet:block">
@@ -13,10 +20,17 @@ export function CatalogueList({ categories }: { categories: Category[] }) {
             <CardTitle>Categories</CardTitle>
           </CardHeader>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             {categories.map((category) => (
-              <Link key={category.id} href={`/catalogue/${category.slug}`}>
-                <Button variant="ghost" className="w-full justify-start">
+              <Link key={category.id} href={`/p/${category.slug}`}>
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    'w-full justify-start',
+                    active === category.slug &&
+                      'bg-primary text-primary-foreground'
+                  )}
+                >
                   {category.name}
                 </Button>
               </Link>
@@ -38,7 +52,7 @@ export function CatalogueList({ categories }: { categories: Category[] }) {
             {categories.map((category) => (
               <div key={category.id}>
                 <Link
-                  href={`/catalogue/${category.slug}`}
+                  href={`/p/${category.slug}`}
                   className="flex flex-col items-center gap-2"
                 >
                   <div className="relative w-16 h-16 overflow-hidden rounded-full bg-primary">

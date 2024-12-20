@@ -15,6 +15,21 @@ interface Props {
 }
 
 export function ProductsCard({ products = [], className }: Props) {
+  if (products.length === 0) {
+    return (
+      <div className="flex flex-col items-center gap-4 my-20">
+        <p>No products found</p>
+        <Image
+          src="/images/empty.png"
+          alt="Empty"
+          width={300}
+          height={300}
+          className="rounded-full bg-primary"
+        />
+      </div>
+    )
+  }
+
   return (
     <div
       className={cn(

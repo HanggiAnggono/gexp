@@ -5,6 +5,7 @@ export interface Product {
   imageUrl: string
   price: number
   description: string
+  categoryId: number
 }
 
 const products: Product[] = [
@@ -12,6 +13,7 @@ const products: Product[] = [
     id: 1,
     slug: 'graphic-t-shirt',
     name: 'Graphic T-Shirt',
+    categoryId: 1,
     imageUrl:
       'https://tse3.mm.bing.net/th?id=OIP.C0oG-QgU-H2OMROQqBRvSAHaLH&w=200&h=300&c=7',
     price: 19.99,
@@ -30,6 +32,7 @@ const products: Product[] = [
     id: 2,
     slug: 'minimalist-watch',
     name: 'Minimalist Watch',
+    categoryId: 2,
     imageUrl:
       'https://tse3.mm.bing.net/th?id=OIP.3Vx_Aa6dk8ZVnLzTABMjpgHaHa&w=200&h=200&c=7',
     price: 79.99,
@@ -46,6 +49,7 @@ const products: Product[] = [
     id: 3,
     slug: 'distressed-denim-jeans',
     name: 'Distressed Denim Jeans',
+    categoryId: 1,
     imageUrl:
       'https://i5.walmartimages.com/seo/Wassery-Men-s-Straight-Leg-Jeans-Stacked-Denim-Jeans-Ripped-Distressed-Destroyed-Biker-Jean-Washed-Denim-Pants-Streetwear-Clothes_6de80804-deac-4e44-aefc-ea9afda7e64a.9c5a670bddf8b01a6387dbf80feacaa1.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF',
     price: 49.99,
@@ -64,6 +68,7 @@ const products: Product[] = [
     id: 4,
     slug: 'leather-belt',
     name: 'Leather Belt',
+    categoryId: 2,
     imageUrl:
       'https://tse4.mm.bing.net/th?id=OIP.GqwKRxgLVmjC7ew04DwR8wHaHb&w=200&h=200&c=7',
     price: 29.99,
@@ -81,6 +86,7 @@ const products: Product[] = [
     id: 5,
     slug: 'cable-knit-sweater',
     name: 'Cable-Knit Sweater',
+    categoryId: 2,
     imageUrl:
       'https://tse2.mm.bing.net/th?id=OIP.robWG7arUuMMzYLNoG4dxQHaMJ&w=200&h=328&c=7',
     price: 39.99,
@@ -99,6 +105,7 @@ const products: Product[] = [
     id: 6,
     slug: 'slim-fit-shirt',
     name: 'Slim Fit Shirt',
+    categoryId: 1,
     imageUrl:
       'https://tse1.mm.bing.net/th?id=OIP.6W-9mzgonvS89fxS0MoFZwHaJo&w=200&h=260&c=7',
     price: 29.99,
@@ -117,6 +124,7 @@ const products: Product[] = [
     id: 7,
     slug: 'skinny-jeans',
     name: 'Skinny Jeans',
+    categoryId: 2,
     imageUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs5_RohVStNsX0xUJovLtvoqEw2rAWnjwZ4w&s',
     price: 39.99,
@@ -135,6 +143,7 @@ const products: Product[] = [
     id: 8,
     slug: 'tailored-blazer',
     name: 'Tailored Blazer',
+    categoryId: 3,
     imageUrl:
       'https://tse4.mm.bing.net/th?id=OIP.fMVMBvY6b68GyeWU9eLhIAHaLH&w=200&h=300&c=7',
     price: 99.99,
@@ -154,6 +163,12 @@ const products: Product[] = [
 export async function getProducts(): Promise<Product[]> {
   return new Promise((resolve) => {
     resolve(products)
+  })
+}
+
+export async function getProductsByCategoryId(id: number): Promise<Product[]> {
+  return new Promise((resolve) => {
+    resolve(products.filter((product) => product.categoryId === id))
   })
 }
 
